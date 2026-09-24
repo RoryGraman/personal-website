@@ -1,5 +1,5 @@
-import React from 'react';
-import { Github, Instagram, Twitter } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { ArrowRight, Github, Instagram, Twitter } from 'lucide-react';
 import RetroLink from '../components/RetroLink';
 import {
   Container,
@@ -12,13 +12,22 @@ import {
   Description,
   SocialLinksSection,
   SocialLinksContainer,
+  ProjectsSection,
+  SectionTitle,
+  ProjectLink,
+  ProjectName,
+  ProjectBlurb,
   Footer,
   FooterText,
-  FooterSubText,
-  FooterDescription
+  FooterSubText
 } from '../styles/GlobalStyles';
 
 const HomePage: React.FC = () => {
+  // The Fresh Lines pages set their own titles, so restore this one when the visitor comes back.
+  useEffect(() => {
+    document.title = 'Rory Graman - Product Manager';
+  }, []);
+
   return (
     <Container>
       <Card>
@@ -33,7 +42,7 @@ const HomePage: React.FC = () => {
         </CardHeader>
         <CardContent>
           <Description>
-            Hello! I'm Rory Graman, a Product Manager based in the south suburbs of Chicago. 
+            Hello! I'm Rory Graman, a Product Manager based in the south suburbs of Chicago.
             I enjoy camping, lifting, and exploring the latest in AI. This is my little corner of the internet!
           </Description>
 
@@ -57,12 +66,21 @@ const HomePage: React.FC = () => {
             </SocialLinksContainer>
           </SocialLinksSection>
 
+          <ProjectsSection aria-labelledby="projects-title">
+            <SectionTitle id="projects-title">Projects I'm working on</SectionTitle>
+            <ProjectLink to="/fresh-lines">
+              <img src="/fresh-lines/icon.png" alt="" width={40} height={40} />
+              <span>
+                <ProjectName>Fresh Lines</ProjectName>
+                <ProjectBlurb>A draw-the-track snowboard game for iPhone</ProjectBlurb>
+              </span>
+              <ArrowRight size={20} aria-hidden="true" />
+            </ProjectLink>
+          </ProjectsSection>
+
           <Footer>
             <FooterText>&copy; {new Date().getFullYear()} Rory Graman. All rights reserved.</FooterText>
             <FooterSubText>Powered by Retro Vibes &trade;</FooterSubText>
-            <FooterDescription>
-              This website is hosted on a 2014 Mac Mini running Debian and is served using Cloudflare Tunneling.
-            </FooterDescription>
           </Footer>
         </CardContent>
       </Card>

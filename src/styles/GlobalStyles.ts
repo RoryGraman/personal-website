@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const theme = {
   colors: {
@@ -156,8 +157,73 @@ export const FooterSubText = styled.p`
   margin-top: 0.25rem;
 `;
 
-export const FooterDescription = styled.p`
+export const ProjectsSection = styled.section`
+  margin-top: 1.5rem;
+
+  @media (min-width: 768px) {
+    margin-top: 2rem;
+  }
+`;
+
+export const SectionTitle = styled.h2`
   font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: ${theme.colors.stone[500]};
-  margin-top: 0.5rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+`;
+
+export const ProjectLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 2px solid ${theme.colors.stone[700]};
+  background-color: ${theme.colors.amber[100]};
+  color: ${theme.colors.stone[700]};
+  text-decoration: none;
+  font-family: ${theme.fonts.mono};
+  transition: all 0.15s ease-in-out;
+
+  img {
+    width: 40px;
+    height: 40px;
+    flex: none;
+    border: 2px solid ${theme.colors.stone[700]};
+  }
+
+  svg {
+    flex: none;
+    margin-left: auto;
+    color: ${theme.colors.stone[700]};
+    transition: color 0.15s ease-in-out;
+  }
+
+  &:hover {
+    background-color: ${theme.colors.emerald[100]};
+    box-shadow: ${theme.shadows.retroHover};
+    color: ${theme.colors.emerald[800]};
+
+    svg {
+      color: ${theme.colors.emerald[800]};
+    }
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: ${theme.shadows.retroActive};
+  }
+`;
+
+export const ProjectName = styled.span`
+  display: block;
+  font-weight: 700;
+`;
+
+export const ProjectBlurb = styled.span`
+  display: block;
+  font-size: 0.8125rem;
+  color: ${theme.colors.stone[500]};
 `;
