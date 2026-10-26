@@ -4,16 +4,18 @@ import FreshLinesLayout, { SUPPORT_EMAIL } from '../components/FreshLinesLayout'
 import { Eyebrow, Title, Heading, Text, List, Callout } from '../styles/FreshLinesStyles';
 
 const APPLE_PRIVACY = 'https://www.apple.com/legal/privacy/';
+const GOOGLE_PARTNER_SITES = 'https://policies.google.com/technologies/partner-sites';
 
 /** The privacy policy for the Fresh Lines app (the App Store's Privacy Policy URL). */
 const FreshLinesPrivacyPage: React.FC = () => (
   <FreshLinesLayout title="Privacy Policy · Fresh Lines">
-    <Eyebrow>Effective September 24, 2026</Eyebrow>
+    <Eyebrow>Effective October 25, 2026</Eyebrow>
     <Title>Privacy Policy</Title>
 
     <Callout>
-      In short: Fresh Lines collects no personal data. It has no accounts, no ads, no analytics and no tracking, and
-      it does not use the internet. Your progress stays on your device.
+      In short: Fresh Lines has no accounts, and I do not collect your personal data. The app shows ads from Google
+      AdMob, and Google collects some data from your device to show them. You choose whether ads can use it to track
+      you. Your game progress stays on your device.
     </Callout>
 
     <Text>
@@ -21,24 +23,57 @@ const FreshLinesPrivacyPage: React.FC = () => (
       and these Fresh Lines web pages handle your information.
     </Text>
 
-    <Heading>Information the app collects</Heading>
-    <Text>None. The app does not collect, send or share any personal data. It has:</Text>
-    <List>
-      <li>no sign-in and no accounts;</li>
-      <li>no advertising;</li>
-      <li>no analytics, crash-reporting or tracking tools;</li>
-      <li>no in-app purchases;</li>
-      <li>no connection to the internet, and no servers of its own.</li>
-    </List>
+    <Heading>Information I collect</Heading>
     <Text>
-      The app does not ask for your location, contacts, photos, camera, microphone or any other personal information.
+      None. I have no servers for the app, and the app sends nothing to me. It has no sign-in, no accounts and no
+      analytics of its own. It does not ask for your contacts, photos, camera, microphone or precise location.
+    </Text>
+
+    <Heading>Ads</Heading>
+    <Text>
+      The app shows ads from Google AdMob: a full-screen ad after some runs, and a video you can choose to watch to
+      double the coins from a run. To show and measure these ads, Google collects data from your device, such as
+      your device’s advertising identifier, your IP address and approximate location, which ads you see and tap,
+      and crash and performance data. Google handles this data under{' '}
+      <a href={GOOGLE_PARTNER_SITES} target="_blank" rel="noopener noreferrer">
+        Google’s own policies
+      </a>
+      .
+    </Text>
+    <List>
+      <li>
+        Tracking: the app asks for your permission before ads can use your device’s advertising identifier to track
+        you across other companies’ apps and websites. If you say no, you still see ads, but they are less
+        personalized. You can change this at any time in Settings &gt; Privacy &amp; Security &gt; Tracking.
+      </li>
+      <li>
+        In the European Economic Area, the UK and Switzerland, Google’s consent form asks for your consent first. You
+        can change your choice later with the Privacy button in the app.
+      </li>
+      <li>Remove Ads: if you buy Remove Ads, the app shows no more ads after runs.</li>
+    </List>
+
+    <Heading>Purchases</Heading>
+    <Text>
+      Remove Ads is an in-app purchase. Apple handles the payment. I never see your name, card or Apple Account
+      details. The app only learns from Apple whether you own Remove Ads.
+    </Text>
+
+    <Heading>Game Center</Heading>
+    <Text>
+      If you sign in to Game Center, the app sends your best distance to Apple’s Game Center leaderboard. Other
+      players can see it with your Game Center name. Apple handles Game Center under{' '}
+      <a href={APPLE_PRIVACY} target="_blank" rel="noopener noreferrer">
+        Apple’s own privacy policy
+      </a>
+      .
     </Text>
 
     <Heading>Information stored on your device</Heading>
     <Text>
-      To keep your game going between sessions, the app saves your coins, upgrade levels, best distance, sound setting
-      and whether you finished the tutorial. This save stays on your device. I cannot see it, and it is never sent to
-      me or to anyone else. Deleting the app deletes the save.
+      To keep your game going between sessions, the app saves your coins, upgrade levels, best distance, sound
+      setting, whether you finished the tutorial and whether you bought Remove Ads. This save stays on your device. I
+      cannot see it, and it is never sent to me or to anyone else. Deleting the app deletes the save.
     </Text>
 
     <Heading>Information Apple may share with me</Heading>
@@ -55,8 +90,8 @@ const FreshLinesPrivacyPage: React.FC = () => (
 
     <Heading>Children</Heading>
     <Text>
-      Fresh Lines is suitable for all ages. Because the app collects no personal data from anyone, it collects none
-      from children.
+      Fresh Lines is not directed at children under 13. I do not knowingly collect personal data from children, and
+      the app collects no personal data for me from anyone.
     </Text>
 
     <Heading>These web pages</Heading>

@@ -70,7 +70,7 @@ const FreshLinesTermsPage: React.FC = () => (
 
     <Heading>Privacy</Heading>
     <Text>
-      The app collects no personal data. Read the <Link to="/fresh-lines/privacy-policy">privacy policy</Link>.
+      The app shows ads from Google AdMob. Read the <Link to="/fresh-lines/privacy-policy">privacy policy</Link>.
     </Text>
 
     <Heading>Changes to these terms</Heading>
